@@ -12,9 +12,9 @@ function Create() {
   const handleClick=(e)=>{
     e.preventDefault();
     console.log(name+" "+password+" ip: "+{host});
-    axios.post(`http://${host}:8080/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json','Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+    //axios.post(`http://${host}:8080/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json','Authorization': 'Bearer YOUR_ACCESS_TOKEN',
     //axios.post(`/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json','Authorization': 'Bearer YOUR_ACCESS_TOKEN', 'Access-Control-Allow-Origin':'*', 'Access-Control-Allow-Methods': 'PUT, POST, DELETE, GET' 
-    //axios.post(`/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json', 
+    axios.post(`/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json', 
   }})
     .then((response)=>{
       console.log(response);
