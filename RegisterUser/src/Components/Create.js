@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 function Create() {
   const navigate = useNavigate();
   //const [id, setId] = useState(0);
-  const host = process.env.REACT_APP_HOST||"localhost";
+  ////const host = process.env.REACT_APP_HOST||"localhost";
   //const host = window.__RUNTIME_CONFIG__.REACT_APP_HOST||"localhost"; 
   const [name,setName]= useState("");
   const [password,setPassword]= useState("");
   const handleClick=(e)=>{
     e.preventDefault();
-    console.log(name+" "+password+" ip: "+{host});
+    console.log(name+" "+password+" ip: "/*+{host}*/);
     //axios.post(`http://${host}:8080/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json','Authorization': 'Bearer YOUR_ACCESS_TOKEN',
     //axios.post(`/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json','Authorization': 'Bearer YOUR_ACCESS_TOKEN', 'Access-Control-Allow-Origin':'*', 'Access-Control-Allow-Methods': 'PUT, POST, DELETE, GET' 
     axios.post(`/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json', 

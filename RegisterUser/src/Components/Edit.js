@@ -6,7 +6,7 @@ function Edit() {
     const param = useParams();
     const[id, setId]= useState(param.id);
     const[name, setName] = useState("");
-    const host = process.env.REACT_APP_HOST||"localhost";
+    //const host = process.env.REACT_APP_HOST||"localhost";
     
     const [password, setPassword]= useState("");
     const navigate= useNavigate();
@@ -25,7 +25,7 @@ function Edit() {
           setId(userData.id);
           setName(userData.name);
           setPassword(userData.password);
-          console.log(" ip: "+`${host}`);      
+         // console.log(" ip: "+`${host}`);      
         }).catch(error => {
           alert("Error Ocurred getting employee detail:"+ error);
         });

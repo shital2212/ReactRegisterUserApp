@@ -5,8 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 function AllUsers() {
     const navigate= useNavigate();
     const[user, setUser]= useState([]);
-    const host = process.env.REACT_APP_HOST||"localhost"; 
+    //const host = process.env.REACT_APP_HOST||"localhost"; 
     
+//const host= document.baseURI;
+
     //const host = window.__RUNTIME_CONFIG__.REACT_APP_HOST||"localhost"; 
     const setUserData =()=>{
        // axios.get("https://6629c5a967df268010a18ed6.mockapi.io/api/v1/user")
@@ -18,11 +20,12 @@ function AllUsers() {
         })
         .catch(error =>{
             alert("Error occured!"+ error);
+  console.log("host="+`${host}`)
         })
     }
     useEffect(()=>{
         setUserData();
-        console.log(" ip: "+`${host}`);
+       // console.log(" ip: "+`${host}`);
     },[])
 
     const removeUser=(userId)=>{
