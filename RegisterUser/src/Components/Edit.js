@@ -19,7 +19,7 @@ function Edit() {
         //http://localhost:8080/test/users
         //axios.get("https://6629c5a967df268010a18ed6.mockapi.io/api/v1/user/"+id)
         //axios.get(`http://${host}:8080/test/user/`+id)
-        axios.get(`/test/user/`+id)
+        axios.get(`http://localhost:8082/test/user/`+id)
         .then((response) => {
           const userData = response.data;
           setId(userData.id);
@@ -27,7 +27,7 @@ function Edit() {
           setPassword(userData.password);
          // console.log(" ip: "+`${host}`);      
         }).catch(error => {
-          alert("Error Ocurred getting employee detail:"+ error);
+          console.log("Error Ocurred getting employee detail:"+ error);
         });
       }, []);
 
@@ -36,14 +36,14 @@ function Edit() {
         console.log(name+" "+password);
         //axios.put("https://6629c5a967df268010a18ed6.mockapi.io/api/v1/user/"+id,{name:name, password:password})
         //axios.put(`http://${host}:8080/test/user/`+id,{name:name, password:password})
-        axios.put(`/test/user/`+id,{name:name, password:password})
+        axios.put(`http://localhost:8082/test/user/`+id,{name:name, password:password})
         .then((response)=>{
           console.log(response);
           alert("User update done!");
           navigate("/allusers");
         })
         .catch(error=>{
-          alert("Error occured while updating an existing record: "+ error)
+          console.log("Error occured while updating an existing record: "+ error)
         })
       }
     return (

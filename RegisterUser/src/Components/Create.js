@@ -14,14 +14,14 @@ function Create() {
     console.log(name+" "+password+" ip: "/*+{host}*/);
     //axios.post(`http://${host}:8080/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json','Authorization': 'Bearer YOUR_ACCESS_TOKEN',
     //axios.post(`/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json','Authorization': 'Bearer YOUR_ACCESS_TOKEN', 'Access-Control-Allow-Origin':'*', 'Access-Control-Allow-Methods': 'PUT, POST, DELETE, GET' 
-    axios.post(`/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json', 
+    axios.post(`http://localhost:8082/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json', 
   }})
     .then((response)=>{
       console.log(response);
       navigate("/");
     })
     .catch(error=>{
-      alert("Error occured while creating a new record: "+ error)
+      console.log("Error occured while creating a new record: "+ error)
     })
   }
 
